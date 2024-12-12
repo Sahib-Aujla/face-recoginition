@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import ControlBtns from "./components/ControlBtns";
 import WebCamFeed from "./components/WebCamFeed";
 import FaceOverlay from "./components/FaceOverlay";
+import WebCamOverlay from "./components/WebCamOverlay";
 function App() {
   useEffect(() => {
     async function init() {
@@ -25,8 +26,9 @@ function App() {
 
       <div style={{ position: "relative" }}>
         <WebCamFeed />
-        <FaceOverlay />
+        <WebCamOverlay />
       </div>
+      <FaceOverlay />
     </Container>
   );
 }

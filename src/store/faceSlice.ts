@@ -6,25 +6,28 @@ interface FaceData {
     width: number;
     height: number;
     age?: number;
-    genders?: string;
+    gender?: string;
     expression?: string;
 }
 interface FacesState {
     faces: FaceData[];
     loading: boolean;
     error: string | null;
+    imgUrl: string | null;
 }
 const initialState: FacesState = {
     faces: [],
     loading: false,
-    error: null
+    error: null,
+    imgUrl: null,
 };
 const faceSlice = createSlice({
     name: "faceSlice",
     initialState,
     reducers: {
-        setDetectedFaces(state, action: PayloadAction<FaceData[]>) {
-            state.faces = action.payload;
+        setDetectedFaces(state, action: PayloadAction<{ imgUrl: string, faceData: FaceData[] }>) {
+            state.faces = action.payload.faceData;
+            state.imgUrl = action.payload.imgUrl;
         },
         setFacesLoading(state, action: PayloadAction<boolean>) {
             state.loading = action.payload;

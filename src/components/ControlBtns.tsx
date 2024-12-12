@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../store";
 import { startWebCam, stopWebCam } from "../store/webcamSlice";

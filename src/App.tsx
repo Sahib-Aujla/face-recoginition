@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import ControlBtns from "./components/ControlBtns";
 import WebCamFeed from "./components/WebCamFeed";
-import FaceOverlay from "./components/FaceOverlay";
 import WebCamOverlay from "./components/WebCamOverlay";
+import CapturedImageOverlay from "./components/CapturedImageOverlay";
 function App() {
   useEffect(() => {
     async function init() {
@@ -28,7 +28,7 @@ function App() {
         <WebCamFeed />
         <WebCamOverlay />
       </div>
-      <FaceOverlay />
+      <CapturedImageOverlay />
     </Container>
   );
 }

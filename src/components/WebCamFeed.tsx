@@ -58,7 +58,6 @@ const WebCamFeed = () => {
         .withFaceLandmarks()
         .withFaceExpressions()
         .withAgeAndGender();
-      console.log(detections);
       const faces = detections.map((d) => {
         const expressionEntries = Object.entries(d.expressions) as [
           keyof faceapi.FaceExpressions,
@@ -78,11 +77,10 @@ const WebCamFeed = () => {
         };
       });
       const imgUrl = canvas.toDataURL("image/png");
-      console.log(imgUrl);
-      console.log(faces);
+
       dispatch(setDetectedFaces({ faceData: faces, imgUrl }));
     };
-    const timer = setInterval(handleImageCapture, 3000);
+    const timer = setInterval(handleImageCapture, 2000);
 
     return () => {
       clearInterval(timer);

@@ -13,7 +13,7 @@ const ControlBtns = () => {
           Stop Video
         </Button>
       ) : (
-        <Button variant="success" onClick={() => dispatch(startWebCam())}>
+        <Button variant="primary" onClick={() => dispatch(startWebCam())}>
           Start Video
         </Button>
       )}

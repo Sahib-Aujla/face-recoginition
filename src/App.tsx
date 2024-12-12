@@ -1,10 +1,10 @@
 import * as faceapi from "face-api.js";
 import { useEffect } from "react";
-import { Container } from "react-bootstrap";
 import ControlBtns from "./components/ControlBtns";
 import WebCamFeed from "./components/WebCamFeed";
 import WebCamOverlay from "./components/WebCamOverlay";
 import CapturedImageOverlay from "./components/CapturedImageOverlay";
+import { Container } from "react-bootstrap";
 function App() {
   useEffect(() => {
     async function init() {
@@ -20,13 +20,27 @@ function App() {
     init();
   }, []);
   return (
-    <Container fluid>
-      <h1 className="m-3 text-center">Face Recognition App</h1>
+    <Container
+      fluid
+      style={{
+        width: "100%",
+        backgroundImage: "url(./bg.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+      }}
+      className="m-0 p-0"
+    >
+      <h1 className="p-3 text-center fw-bold">Face Recognition App</h1>
+      <h4 className="p-3 text-center">
+        Click on start to see Real Time face detection.
+      </h4>
       <ControlBtns />
-
-      <div style={{ position: "relative" }}>
-        <WebCamFeed />
-        <WebCamOverlay />
+      <div className="d-flex justify-content-center">
+        <div style={{ position: "relative" }}>
+          <WebCamFeed />
+          <WebCamOverlay />
+        </div>
       </div>
       <CapturedImageOverlay />
     </Container>

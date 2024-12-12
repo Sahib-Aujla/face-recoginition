@@ -119,8 +119,8 @@ const CapturedImageOverlay = () => {
         </Col>
       </Row>
 
-      <Row className="align-items-center mb-3">
-        <Col xs={12} md={6}>
+      <Row className="align-items-center mb-3 ">
+        <Col xs={12} className="d-flex justify-content-center">
           <Form.Group controlId="formFile" className="mb-3">
             <Form.Label>Select an image file</Form.Label>
             <Form.Control
@@ -130,7 +130,7 @@ const CapturedImageOverlay = () => {
             />
           </Form.Group>
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} className="d-flex justify-content-center">
           <Button
             variant="primary"
             onClick={handleSubmit}
